@@ -1,6 +1,26 @@
 package org.sourceit;
 
+import java.util.Random;
+
 public class HomeTask1 {
+
+    public static void main(String[] args) {
+        System.out.println("exercise 1");
+        System.out.println("Number is even " + isEven(4));
+        System.out.println("exercise 2");
+        System.out.println("" + findHypotenuse(3, 4));
+        System.out.println("exercise 3");
+        System.out.println(+perimeter(34, 10, 12));
+        System.out.println("exercise 4");
+        System.out.println("Random " + generateNumberFromRange(1, 10));
+        System.out.println("exercise 5");
+        System.out.println("Sum " + calculateSum(23));
+        System.out.println("exercise 6");
+        System.out.println("Fibonacci " + fibonacci(5));
+        System.out.println("exercise 7");
+        System.out.println("Happy ticket " + isHappy(567576));
+    }
+
 
     /**
      * Проверить, является ли число четным.
@@ -9,7 +29,11 @@ public class HomeTask1 {
      * @return является ли число четным.
      */
     public static boolean isEven(int number) {
-        return false;
+        int numberX = number % 2;
+        if (numberX == 0)
+            return true;
+        else
+            return false;
     }
 
     /**
@@ -22,8 +46,19 @@ public class HomeTask1 {
      * @return значение гипотенузы.
      */
     public static double findHypotenuse(double a, double b) {
-        return 0D;
+        double c = 0;
+        if (a <= 0) {
+            System.out.println("failed a = 0");
+            return a;
+        } else if (b <= 0) {
+            System.out.println("failed b = 0");
+        } else {
+            c = Math.sqrt(a * a + b * b);
+            System.out.print("Hypotenuse = ");
+        }
+        return c;
     }
+
 
     /**
      * Метод находит периметр треугольника.
@@ -34,7 +69,21 @@ public class HomeTask1 {
      * @return периметр треугольника.
      */
     public static double perimeter(double a, double b, double c) {
-        return 0D;
+        double p = 0;
+        if (a == 0) {
+            System.out.print("Error a = ");
+            return a;
+        } else if (b == 0) {
+            System.out.print("Error b = ");
+            return b;
+        } else if (c == 0) {
+            System.out.print("Error c = ");
+            return c;
+        } else {
+            p = a + b + c;
+            System.out.print("area of triangle = ");
+        }
+        return p;
     }
 
     /**
@@ -57,7 +106,9 @@ public class HomeTask1 {
      * @return сгенерированное число.
      */
     public static int generateNumberFromRange(int min, int max) {
-        return 0;
+        Random a = new Random();
+        int b = (int) (a.nextDouble() * (max - min + 1));
+        return b;
     }
 
     /**
@@ -69,7 +120,14 @@ public class HomeTask1 {
      * @return сумма цифр.
      */
     public static long calculateSum(long number) {
-        return 0L;
+
+        long sum = 0;
+        while (number != 0) {
+            sum = sum + (number % 10);
+            number /= 10;
+        }
+        return sum;
+
     }
 
     /**
@@ -81,7 +139,16 @@ public class HomeTask1 {
      * @return элемент последовательности.
      */
     public static int fibonacci(int till) {
-        return 0;
+        int a = 1;
+        int b = 1;
+        int c = 0;
+        for (int i = 0; i <= till ; i++) {
+            c = a + b;
+            System.out.print(c + ",");
+            a = b;
+            b = c;
+        }
+        return c;
     }
 
     /**
@@ -93,6 +160,16 @@ public class HomeTask1 {
      * @return является ли билет счастливым.
      */
     public static boolean isHappy(long ticket) {
-        return false;
+        long num1 = ticket / 100000;
+        long num2 = (ticket / 10000) % 10;
+        long num3 = (ticket / 1000) % 10 % 10;
+        long num4 = (ticket / 100) % 10 % 10 % 10;
+        long num5 = (ticket / 10) % 10 % 10 % 10 % 10;
+        long num6 = ticket % 10;
+        if (num1 + num2 + num3 == num4 + num5 + num6) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
