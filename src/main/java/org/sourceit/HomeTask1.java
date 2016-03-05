@@ -19,6 +19,8 @@ public class HomeTask1 {
         System.out.println("Fibonacci " + fibonacci(5));
         System.out.println("exercise 7");
         System.out.println("Happy ticket " + isHappy(567576));
+        System.out.println("exercise 8");
+        System.out.println("Area of triangle " + area(3,4));
     }
 
 
@@ -81,7 +83,7 @@ public class HomeTask1 {
             return c;
         } else {
             p = a + b + c;
-            System.out.print("area of triangle = ");
+            System.out.print("perimeter = ");
         }
         return p;
     }
@@ -95,7 +97,10 @@ public class HomeTask1 {
      * @return площадь треугольника.
      */
     public static double area(double a, double b) {
-        return 0D;
+
+        double c = Math.sqrt(a * a + b * b);
+        double p =(a+b+c)/2;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
     /**
