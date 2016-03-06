@@ -31,11 +31,7 @@ public class HomeTask1 {
      * @return является ли число четным.
      */
     public static boolean isEven(int number) {
-        int numberX = number % 2; // return number % 2 == 0;
-        if (numberX == 0)
-            return true;
-        else
-            return false;
+        return number % 2 == 0;
     }
 
     /**
