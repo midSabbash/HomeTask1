@@ -16,7 +16,7 @@ public class HomeTask1 {
         System.out.println("exercise 5");
         System.out.println("Sum " + calculateSum(23));
         System.out.println("exercise 6");
-        System.out.println("Fibonacci " + fibonacci(5));
+        System.out.println(" Fibonacci " + fibonacci(5));
         System.out.println("exercise 7");
         System.out.println("Happy ticket " + isHappy(567576));
         System.out.println("exercise 8");
@@ -31,7 +31,7 @@ public class HomeTask1 {
      * @return является ли число четным.
      */
     public static boolean isEven(int number) {
-        int numberX = number % 2;
+        int numberX = number % 2; // return number % 2 == 0;
         if (numberX == 0)
             return true;
         else
@@ -51,7 +51,6 @@ public class HomeTask1 {
         double c = 0;
         if (a <= 0) {
             System.out.println("failed a = 0");
-            return a;
         } else if (b <= 0) {
             System.out.println("failed b = 0");
         } else {
@@ -97,10 +96,17 @@ public class HomeTask1 {
      * @return площадь треугольника.
      */
     public static double area(double a, double b) {
-
         double c = Math.sqrt(a * a + b * b);
-        double p =(a+b+c)/2;
-        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        if (a <= 0) {
+            System.out.println("failed a = 0");
+            return 0;
+        } else if (b <= 0) {
+            System.out.println("failed b = 0");
+            return 0;
+        } else {
+            double p = (a + b + c) / 2;
+            return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        }
     }
 
     /**
@@ -112,7 +118,7 @@ public class HomeTask1 {
      */
     public static int generateNumberFromRange(int min, int max) {
         Random a = new Random();
-        int b = (int) (a.nextDouble() * (max - min + 1));
+        int b = min + (int) (a.nextDouble() * (max - min + 1));
         return b;
     }
 
@@ -131,6 +137,9 @@ public class HomeTask1 {
             sum = sum + (number % 10);
             number /= 10;
         }
+        if (sum < 0) {
+            return sum * -1;
+        }
         return sum;
 
     }
@@ -144,15 +153,18 @@ public class HomeTask1 {
      * @return элемент последовательности.
      */
     public static int fibonacci(int till) {
-        int a = 1;
-        int b = 1;
-        int c = 0;
-        for (int i = 0; i <= till ; i++) {
-            c = a + b;
-            System.out.print(c + ",");
-            a = b;
-            b = c;
+        int a = 1;int b = 1;int c = 0;
+        if(till < 0){
+            return 1;
+        }else {
+            for (int i = 0; i <= till - 2; i++) {
+                c = a + b;
+                System.out.print(c + ",");
+                a = b;
+                b = c;
+            }
         }
+
         return c;
     }
 
@@ -167,9 +179,9 @@ public class HomeTask1 {
     public static boolean isHappy(long ticket) {
         long num1 = ticket / 100000;
         long num2 = (ticket / 10000) % 10;
-        long num3 = (ticket / 1000) % 10 % 10;
-        long num4 = (ticket / 100) % 10 % 10 % 10;
-        long num5 = (ticket / 10) % 10 % 10 % 10 % 10;
+        long num3 = (ticket / 1000) % 10;
+        long num4 = (ticket / 100) % 10;
+        long num5 = (ticket / 10) % 10;
         long num6 = ticket % 10;
         if (num1 + num2 + num3 == num4 + num5 + num6) {
             return true;

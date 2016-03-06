@@ -59,7 +59,7 @@ public class HomeTaskTest1 {
 
     @Test
     public void testArea() {
-        Assert.assertEquals(Math.round(HomeTask1.area(4, 3)), 78);
+        Assert.assertEquals(Math.round(HomeTask1.area(4, 3)), 6);
     }
 
     /**
