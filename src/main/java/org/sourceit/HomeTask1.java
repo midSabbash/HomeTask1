@@ -152,15 +152,12 @@ public class HomeTask1 {
         int a = 1;int b = 1;int c = 0;
         if(till < 0){
             return 1;
-        }else {
-            for (int i = 0; i <= till - 2; i++) {
+        }for (int i = 0; i <= till - 2; i++) {
                 c = a + b;
                 System.out.print(c + ",");
                 a = b;
                 b = c;
             }
-        }
-
         return c;
     }
 
@@ -179,10 +176,6 @@ public class HomeTask1 {
         long num4 = (ticket / 100) % 10;
         long num5 = (ticket / 10) % 10;
         long num6 = ticket % 10;
-        if (num1 + num2 + num3 == num4 + num5 + num6) {
-            return true;
-        } else {
-            return false;
-        }
+        return num1 + num2 + num3 == num4 + num5 + num6;
     }
 }
