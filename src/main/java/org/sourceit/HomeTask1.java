@@ -45,10 +45,8 @@ public class HomeTask1 {
      */
     public static double findHypotenuse(double a, double b) {
         double c = 0;
-        if (a <= 0) {
-            System.out.println("failed a = 0");
-        } else if (b <= 0) {
-            System.out.println("failed b = 0");
+        if(a <= 0 || b <= 0) {
+            return 0;
         } else {
             c = Math.sqrt(a * a + b * b);
             System.out.print("Hypotenuse = ");
@@ -67,16 +65,9 @@ public class HomeTask1 {
      */
     public static double perimeter(double a, double b, double c) {
         double p = 0;
-        if (a == 0) {
-            System.out.print("Error a = ");
-            return a;
-        } else if (b == 0) {
-            System.out.print("Error b = ");
-            return b;
-        } else if (c == 0) {
-            System.out.print("Error c = ");
-            return c;
-        } else {
+        if(a <= 0 || b <= 0 || c <= 0)
+            return 0;
+        else {
             p = a + b + c;
             System.out.print("perimeter = ");
         }
@@ -93,13 +84,9 @@ public class HomeTask1 {
      */
     public static double area(double a, double b) {
         double c = Math.sqrt(a * a + b * b);
-        if (a <= 0) {
-            System.out.println("failed a = 0");
+        if(a <= 0 || b <= 0)
             return 0;
-        } else if (b <= 0) {
-            System.out.println("failed b = 0");
-            return 0;
-        } else {
+        else {
             double p = (a + b + c) / 2;
             return Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
@@ -127,7 +114,6 @@ public class HomeTask1 {
      * @return сумма цифр.
      */
     public static long calculateSum(long number) {
-
         long sum = 0;
         while (number != 0) {
             sum = sum + (number % 10);
