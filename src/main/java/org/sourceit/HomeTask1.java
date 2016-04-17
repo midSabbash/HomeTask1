@@ -45,15 +45,13 @@ public class HomeTask1 {
      */
     public static double findHypotenuse(double a, double b) {
         double c = 0;
-        if(a <= 0 || b <= 0) {
+        if(a <= 0 || b <= 0)
             return 0;
-        } else {
-            c = Math.sqrt(a * a + b * b);
-            System.out.print("Hypotenuse = ");
-        }
+        c = Math.sqrt(a * a + b * b);
+        System.out.print("Hypotenuse = ");
+
         return c;
     }
-
 
     /**
      * Метод находит периметр треугольника.
@@ -67,10 +65,8 @@ public class HomeTask1 {
         double p = 0;
         if(a <= 0 || b <= 0 || c <= 0)
             return 0;
-        else {
-            p = a + b + c;
-            System.out.print("perimeter = ");
-        }
+        p = a + b + c;
+        System.out.print("perimeter = ");
         return p;
     }
 
@@ -86,10 +82,8 @@ public class HomeTask1 {
         double c = Math.sqrt(a * a + b * b);
         if(a <= 0 || b <= 0)
             return 0;
-        else {
             double p = (a + b + c) / 2;
             return Math.sqrt(p * (p - a) * (p - b) * (p - c));
-        }
     }
 
     /**
@@ -101,8 +95,7 @@ public class HomeTask1 {
      */
     public static int generateNumberFromRange(int min, int max) {
         Random a = new Random();
-        int b = min + (int) (a.nextDouble() * (max - min + 1));
-        return b;
+        return min + (int) (a.nextDouble() * (max - min + 1));
     }
 
     /**
