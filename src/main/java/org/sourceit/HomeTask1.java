@@ -44,13 +44,9 @@ public class HomeTask1 {
      * @return значение гипотенузы.
      */
     public static double findHypotenuse(double a, double b) {
-        double c = 0;
         if(a <= 0 || b <= 0)
             return 0;
-        c = Math.sqrt(a * a + b * b);
-        System.out.print("Hypotenuse = ");
-
-        return c;
+        return Math.sqrt(a * a + b * b);
     }
 
     /**
@@ -62,12 +58,9 @@ public class HomeTask1 {
      * @return периметр треугольника.
      */
     public static double perimeter(double a, double b, double c) {
-        double p = 0;
         if(a <= 0 || b <= 0 || c <= 0)
             return 0;
-        p = a + b + c;
-        System.out.print("perimeter = ");
-        return p;
+        return a + b + c;
     }
 
     /**
@@ -79,11 +72,9 @@ public class HomeTask1 {
      * @return площадь треугольника.
      */
     public static double area(double a, double b) {
-        double c = Math.sqrt(a * a + b * b);
         if(a <= 0 || b <= 0)
             return 0;
-            double p = (a + b + c) / 2;
-            return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+            return (a * b) / 2;
     }
 
     /**
@@ -133,7 +124,6 @@ public class HomeTask1 {
             return 1;
         }for (int i = 0; i <= till - 2; i++) {
                 c = a + b;
-                System.out.print(c + ",");
                 a = b;
                 b = c;
             }
